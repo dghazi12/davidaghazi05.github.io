@@ -1,5 +1,11 @@
-.container{
-    align-items: center;
+.row{
+    margin-left: 160px;
+    border-top: solid;
+}
+
+.workHour{
+    border-top: solid;
+    line-height: 100px
 }
 
 h1 {
@@ -29,12 +35,12 @@ h1 {
     /* color: white; */
   }
 
-  input{
+  textarea{
    
     height: 100%;
     width:100%;
     border-style: solid;
-    padding: 40px;
+    padding: 20px;
   }
 
   .btn{

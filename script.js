@@ -11,8 +11,8 @@ $(document).ready(function () {
     for (let i = 9; i < 18; i++) {
 
         $('.container').append($(`<div data-time=${i} id='${i}'>`));
-        $('.container').append($('<div class="col-sm-2"> <p class="hour">' + timeDisplay(i) + '</p>'));
-        $('.container').append($(`<div class="col-sm-8"> <input id=text${i} placeholder="Add your event here..."></input>`));
+        $('.container').append($('<div class="col-sm-2"> <p class="workHour">' + timeDisplay(i) + '</p>'));
+        $('.container').append($(`<div class="col-sm-8"> <textarea id=text${i} placeholder="Add your event here..."></textarea>`));
         $('.container').append($(`<div class="col-sm-2"><button class="btn" id=${i}><i class="fas fa-save"></i></button>`));
 
         getLocalStorage(i)
