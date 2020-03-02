@@ -1,17 +1,21 @@
 var moment = $("#dayTime").text(moment().format("dddd, MMMM Do YYYY"));
 
+function getLocalStorage(key) {
+    let value = localStorage.getItem(key);
+    if (value) {
+        $(`#text${key}`).text(value);
+    }
+}
 
 $(document).ready(function () {
-    for (let i = 9; i < 24; i++) {
+    for (let i = 9; i < 18; i++) {
 
-        //Column 1 
-        $('.container').append(`<div class='col-sm-1' id='time'> ${timeDisplay(i)} </div>`);
+        $('.container').append($(`<div data-time=${i} id='${i}'>`));
+        $('.container').append($('<div class="col-sm-2"> <p class="hour">' + timeDisplay(i) + '</p>'));
+        $('.container').append($(`<div class="col-sm-8"> <input id=text${i} placeholder="Add your event here..."></input>`));
+        $('.container').append($(`<div class="col-sm-2"><button class="btn" id=${i}><i class="fas fa-save"></i></button>`));
 
-        //Column 2
-        $('.container').append(`<div class='col-sm-10' id='userInput'> <p> <input id='test' placeholder="Add your event here"></p></div>`);
-
-        //Column 3
-        $('.container').append(`<button class ='col-sm-1' id='btn' 'submit'></button>` );
+        getLocalStorage(i)
     }
 })
 
@@ -22,18 +26,21 @@ function timeDisplay(hours) {
     return hours + ':00' + ampm;
 }
 
-function updateColors(){
+timeDisplay();
 
+function completedTasks() {
     var currentTime = new Date().getHours();
-    
-    for (var i = 9; i < 24; i++) { 
-     if ($(`#time`).data("time") == currentTime){
-        $(`#userInput`).addClass("present");
-    } else if ($(`#time`).data("time") < currentTime){
-        $(`#userInput`).addClass("present");
-    }else if (currentTime < $(`#time`).data("time")) {
-        $(`#userInput`).addClass("future");
+    for (var i = 9; i < 24; i++) {
+        if ($(`#${i}`).data("time") == currentTime) {
+            $(`#text${i}`).addClass("present");
+        } else if ($(`#${i}`).data("time") < currentTime) {
+            $(`#text${i}`).addClass("present");
+        } else if (currentTime < $(`#${i}`).data("time")) {
+            $(`#text${i}`).addClass("future");
+        }
     }
 }
-}
 
+setInterval(function () {
+    completedTasks();
+}, 1000);
