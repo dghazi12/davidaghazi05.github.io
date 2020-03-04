@@ -7,17 +7,18 @@ function getLocalStorage(key) {
     }
 }
 
-$(document).ready(function () {
+function dayPlanner() {
     for (let i = 9; i < 18; i++) {
 
         $('.container').append($(`<div data-time=${i} id='${i}'>`));
         $('.container').append($('<div class="col-sm-2"> <p class="workHour">' + timeDisplay(i) + '</p>'));
-        $('.container').append($(`<div class="col-sm-8"> <textarea id=text${i} placeholder="Add your event here..."></textarea>`));
-        $('.container').append($(`<div class="col-sm-2"><button class="btn" id=${i}><i class="fas fa-save"></i></button>`));
-
+        $('.container').append($(`<div class="col-sm-8"> <textarea id=text${i} class= userInput placeholder="Add your event here..."></textarea>`));
+        var something = $('.container').append($(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`));
         getLocalStorage(i)
     }
-})
+}
+
+dayPlanner()
 
 function timeDisplay(hours) {
     var ampm = hours >= 12 ? 'pm' : 'am';
@@ -26,11 +27,11 @@ function timeDisplay(hours) {
     return hours + ':00' + ampm;
 }
 
-timeDisplay();
-
 function completedTasks() {
+
     var currentTime = new Date().getHours();
-    for (var i = 9; i < 24; i++) {
+
+    for (var i = 9; i < 18; i++) {
         if ($(`#${i}`).data("time") == currentTime) {
             $(`#text${i}`).addClass("present");
         } else if ($(`#${i}`).data("time") < currentTime) {
@@ -44,3 +45,9 @@ function completedTasks() {
 setInterval(function () {
     completedTasks();
 }, 1000);
+
+var saveBtn = $('.saveBtn');
+var userInput = $('.userInput')
+saveBtn.on('click', function(){
+    console.log('working')
+});

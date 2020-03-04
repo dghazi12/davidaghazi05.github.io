@@ -1,38 +1,37 @@
+.jumbotron{
+    border-bottom: 10px solid;
+    margin-bottom: 50px;
+}
+
 .row{
     margin-left: 160px;
-    border-top: solid;
 }
 
 .workHour{
     border-top: solid;
-    line-height: 100px
+    line-height: 100px;
 }
 
 h1 {
     font-size: 75px;
     font-family: cursive;
     text-align: center;
-    margin-top: 75px;
     margin-bottom: 30px;
 }
 
-#ptext{
-    text-align: center;
-}
-
+#ptext,
 #dayTime{
     text-align: center;
-    margin-bottom: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
 }
 
 .present {
     background-color: #ff6961;
-    /* color: white; */
   }
   
   .future {
     background-color: #77dd77;
-    /* color: white; */
   }
 
   textarea{
@@ -40,15 +39,23 @@ h1 {
     height: 100%;
     width:100%;
     border-style: solid;
-    padding: 20px;
+    color: black;
   }
 
-  .btn{
-      background-color: blue;
-      padding: 40px;
+  .saveBtn{
+      background-color:#6495ED;
       height: 100%;
       width:100%;
       border-style: solid;
       border-color: white;
       border-left: black;
+
+      /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKaH92DtiBZ2nRC1zOYUEnnzz02KPid_nOPVqb_5nhg71PpUw);   
+      background-repeat: no-repeat; 
+      border: none;     */
   }
+
+  .saveBtn:hover {
+    background-color: darkorange;
+  }
+  
