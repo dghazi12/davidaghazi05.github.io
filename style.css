@@ -1,15 +1,12 @@
 .jumbotron{
     border-bottom: 10px solid;
     margin-bottom: 50px;
-}
-
-.row{
-    margin-left: 160px;
+    text-align: center;
 }
 
 .workHour{
     border-top: solid;
-    line-height: 100px;
+    line-height: 50px;
 }
 
 h1 {
@@ -48,14 +45,10 @@ h1 {
       width:100%;
       border-style: solid;
       border-color: white;
-      border-left: black;
-
-      /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUKaH92DtiBZ2nRC1zOYUEnnzz02KPid_nOPVqb_5nhg71PpUw);   
-      background-repeat: no-repeat; 
-      border: none;     */
+      border-left: black; 
   }
 
   .saveBtn:hover {
-    background-color: darkorange;
+    background-color: green;
   }
   
