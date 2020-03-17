@@ -7,7 +7,7 @@ function getLocalStorage(key) {
     }
 }
 
-function dayPlanner(){
+function dayPlanner() {
     for (let i = 9; i < 18; i++) {
 
         var row = $(`<div data-time=${i} id='${i}' class="row">`);

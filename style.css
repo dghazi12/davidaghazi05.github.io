@@ -23,32 +23,31 @@ h1 {
     font-size: 20px;
 }
 
-.present {
-    background-color: #ff6961;
-  }
-  
-  .future {
-    background-color: #77dd77;
-  }
+.present{
+  background-color: #ff6961;
+}
 
-  textarea{
-   
-    height: 100%;
-    width:100%;
-    border-style: solid;
-    color: black;
-  }
+.future{
+  background-color: #77dd77;
+}
 
-  .saveBtn{
-      background-color:#6495ED;
-      height: 100%;
-      width:100%;
-      border-style: solid;
-      border-color: white;
-      border-left: black; 
-  }
+textarea{
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  color: black;
+}
 
-  .saveBtn:hover {
-    background-color: green;
-  }
+.saveBtn{
+  background-color: #6495ED;
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-color: white;
+  border-left: black;
+}
+
+.saveBtn:hover{
+  background-color: green;
+}
   
